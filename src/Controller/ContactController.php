@@ -45,6 +45,8 @@ class ContactController extends AbstractController
     #[Route('/contact/add', name:'contact_add')]
     public function annonces_add(ManagerRegistry $doctrine, Request $request)
     {
+
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $entityManager = $doctrine->getManager();
         
         $contact = new Contact();
