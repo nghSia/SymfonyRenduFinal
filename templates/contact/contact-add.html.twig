@@ -1,0 +1,15 @@
+{% extends 'base.html.twig'  %}
+
+{% block body %}
+<section class="py-5 container">
+    <h1>Ajouter un contact</h1>
+    {# {{ form(formContact) }} #}
+    {{form_start(formContact)}}
+        {{ form_row(formContact.nom)}}<br>
+        {{ form_row(formContact.prenom)}}<br>
+        {{ form_row(formContact.email)}}<br>
+        {{ form_row(formContact.telephone)}}<br>
+        <input type="submit" value="Ajouter" class="btn btn-success">
+    {{form_end(formContact)}}
+</section>
+{% endblock %}
